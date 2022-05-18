@@ -1,10 +1,12 @@
-
+import './Share.css';
 
 function Share() {
-    <div>
-        <h2>Share</h2>
-    </div>
+    return(
+        <div>
+            <h1>MadLibs</h1>
+        </div>
+
+    )
 }
 
 export default Share;
-

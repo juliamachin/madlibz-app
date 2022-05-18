@@ -1,11 +1,19 @@
+import {useState} from 'react';
 import './Form.css';
 
-function Form () {
+
+function Form ({blanks, userInput, handleUserInput}) {
+
+     let blankForm = blanks.map ((input, index)=> {
+         return (
+             <input type='text' placeholder={input} />
+         )
+     })
+
     return (
         <div>
             <form>
-            <input type='text' placeholder='input here' />
-            <input type='submit' value='submit' />
+                {blankForm}
             </form>
         </div>
     )
