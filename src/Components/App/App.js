@@ -2,8 +2,7 @@ import './App.css';
 import { useEffect, useState } from 'react';
 import { Route, Routes, Link, Navigate } from 'react-router-dom';
 import Form from '../Form/Form';
-import MadData from '../MadData/MadData';
-
+import MadLibz from '../MadLibz/MadLibz';
 
 function App() {
 
@@ -15,7 +14,7 @@ function App() {
         </Link>
       </nav>
       <main>
-        <MadData />
+        <MadLibz />
         <Routes>
           <Route path='/' element={<Form />} />
         </Routes>
