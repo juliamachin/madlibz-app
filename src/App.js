@@ -1,10 +1,12 @@
 import "./App.css";
-import { useEffect, useState, React } from "react";
+import React from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import { Route, Routes } from "react-router-dom";
 import Form from "./Components/Form/Form";
 import Story from "./Components/Story/Story";
 import Home from "./Components/Home/Home";
+import Nav from "./Components/Nav/Nav";
 
 function App() {
   const [formData, setFormData] = useState([]);
@@ -20,7 +22,7 @@ function App() {
   const apiCall = async () => {
     try {
       let response = await axios.get(`http://madlibz.herokuapp.com/api/random`);
-      console.log(response.data);
+      //   console.log(response.data);
       setFormData(response.data.blanks);
       setStoryData(response.data.value);
       setTitle(response.data.title);
@@ -28,12 +30,12 @@ function App() {
       console.log(error);
     }
   };
-  console.log(formData);
-  console.log(storyData);
-  console.log(title);
+  //console.log(formData);
+  //console.log(storyData);
+  //console.log(title);
 
   const blankForm = formData.map((blank, index) => {
-    console.log(blank);
+    //  console.log(blank);
     return (
       <Form
         handleChange={handleChange}
@@ -52,7 +54,7 @@ function App() {
     const value = event.target.value;
     setUserInput({ ...userInput, [key]: value });
 
-    console.log(userInput);
+    //  console.log(userInput);
   }
 
   function handleSubmit(event) {
@@ -63,29 +65,28 @@ function App() {
         arr.push(key);
       }
     }
+
     setNewArray([...arr]);
-    console.log(newArray);
+    //  console.log(newArray);
     // if (arr.length === 0) {
     //   setValidForm(true);
-    // }
   }
   //   const newStory = (event) => {
   //     apiCall();
   //   };
   const story = storyData.map((stuff) => {
-    console.log(stuff);
+    //    console.log(stuff);
   });
 
   return (
     <div>
-      <form>
-        {blankForm}
-        <input type="Submit" />
-      </form>
+      <Nav />
+      {blankForm}
+      <input type="Submit" />
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/story" element={<Story />} />
+          <Route path="/story" element={<Story title={title} />} />
         </Routes>
       </main>
     </div>
