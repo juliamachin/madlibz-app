@@ -1,16 +1,18 @@
-import React from 'react';
-import './Form.css';
+import React from "react";
+import "./Form.css";
 
-function Form(blanks, handleUserInput, userInput, handleSubmit) {
-     
-    return (
-        <div>
-            <form>
-                <input type='text' placeholder={blanks}/>
-                <input type='submit' value='submit' />
-            </form>
-        </div>
-    )
+function Form(props) {
+  return (
+    <div>
+      <input
+        type='text'
+        onChange={props.handleChange}
+        placeholder={props.blanks}
+        value={props.userInput}
+        id={props.id}
+      />
+    </div>
+  );
 }
 
 export default Form;

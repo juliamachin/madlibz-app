@@ -1,55 +1,58 @@
-import { useState, useEffect } from 'react';
+import React from "react";
+import { useState, useEffect } from "react";
 import Form from "../Form/Form";
-
+import axios from "axios";
 
 function MadLibz() {
-    const [formData, setFormData] = useState({});
-    const [userInput, setUserInput] = useState({});
+  const [formData, setFormData] = useState([]);
+  const [storyData, setStoryData] = useState([]);
+  const [userInput, setUserInput] = useState({});
+  //const [validForm, setValidForm] = useState(false);
+  const [emptyArray, setEmptyArray] = useState([]);
 
-    useEffect(() => {
-        fetch(`http://madlibz.herokuapp.com/api/random`)
-            .then((response) => response.json())
-            //.then((data) => console.log(data))
-            .then((data) => {
-                setFormData(data)
-            })
-            .catch(() => {
-                console.log('error')
-            });
-    }, []);
-    console.log(formData)
+  useEffect(() => {
+    apiCall();
+  }, []);
 
-    formData.blanks.map((blank, index) => {
-        setUserInput((prevUserInput) => ({
-            ...prevUserInput,
-            [`${index}-${blank}`]: '',
-        }))
-    })
-
-    const handleUserInput = (event) => {
-        const key = event.target.id;
-        const value = event.target.value;
-        setUserInput({ ...userInput, [key]: value });
+  const apiCall = async () => {
+    try {
+      let response = await axios.get(`http://madlibz.herokuapp.com/api/random`);
+      console.log(response.data);
+      setFormData(response.data.blanks);
+      setStoryData(response.data.value);
+    } catch (error) {
+      console.log(error);
     }
-    //handleSubmit funtion to save user's input
-    const handleSubmit = (event) => {
-        event.preventDefault()
-        let inputs = [];
-        for (const key in userInput) {
-            if (userInput[key] === '') {
-                inputs.push(key);
-            }
-        }
-    }
+  };
+  console.log(formData);
+  console.log(storyData);
 
-        return (
-            <Form
-                blanks={formData.blanks}
-                handleUserInput={handleUserInput}
-                userInput={userInput}
-                handleSubmit={handleSubmit}
-            />
-        )
-    }
+  const blankForm = formData.map((blank, index) => {
+    console.log(blank);
+    return <Form handleChange={handleChange} blanks={blank} id={index} />;
+  });
+  console.log(blankForm);
 
-    export default MadLibz;
+  function handleChange(event) {
+    event.preventDefault();
+    //setUserInput(event.target.value)
+     const key = event.target.id;
+     const value = event.target.value;
+     setUserInput({ ...userInput, [key]:value});
+  
+  console.log(userInput)
+  }
+
+
+
+  return (
+    <div>
+      <form>
+        {blankForm}
+        <input type='Submit' />
+      </form>
+    </div>
+  );
+}
+
+export default MadLibz;

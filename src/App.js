@@ -1,8 +1,8 @@
 import './App.css';
-import { useEffect, useState } from 'react';
-import { Route, Routes, Link, Navigate } from 'react-router-dom';
-import Form from '../Form/Form';
-import MadLibz from '../MadLibz/MadLibz';
+import React from 'react';
+import { Route, Routes, Link } from 'react-router-dom';
+import Form from './Components/Form/Form';
+import MadLibz from './Components/MadLibz/MadLibz';
 
 function App() {
 

@@ -26,3 +26,4 @@
 * Implementing conditionals
 * Collecting form data with uncontrolled components
 * Spiraling into more and more confusion before asking for help/being issue ticket shy
+* Difficulty making descriptive commits due to not having clear direction of what I was doing.
