@@ -1,5 +1,5 @@
-import React from "React";
-import Form from "./Form/Form";
+import React from "react";
+import Form from "../Form/Form";
 
 const Home = () => {
   return <Form />;
