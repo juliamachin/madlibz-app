@@ -4,15 +4,16 @@ import "./Form.css";
 function Form(props) {
   return (
     <div>
-      <input
-        type="text"
-        handleChange={props.handleChange}
-        placeholder={props.blanks}
-        value={props.userInput}
-        id={props.id}
-        handleSubmit={props.handleSubmit}
-        required
-      />
+      <form>
+        <input
+          type="text"
+          onChange={props.handleFormChange}
+          placeholder={props.blanks}
+          //   value={props.userInput}
+          id={props.id}
+          required
+        />
+      </form>
     </div>
   );
 }

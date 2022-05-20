@@ -12,8 +12,8 @@ function App() {
   const [formData, setFormData] = useState([]);
   const [storyData, setStoryData] = useState([]);
   const [userInput, setUserInput] = useState({});
-  const [newArray, setNewArray] = useState([]);
   const [title, setTitle] = useState("");
+  const [newArray, setNewArray] = useState([]);
 
   useEffect(() => {
     apiCall();
@@ -35,19 +35,20 @@ function App() {
   //console.log(title);
 
   const blankForm = formData.map((blank, index) => {
-    //  console.log(blank);
+    //console.log(index);
     return (
       <Form
-        handleChange={handleChange}
-        handleSubmit={handleSubmit}
+        handleFormChange={handleFormChange}
+        //handleFormSubmit={handleFormSubmit}
         blanks={blank}
         id={index}
+        userInput={userInput}
       />
     );
   });
   //console.log(blankForm);
 
-  function handleChange(event) {
+  function handleFormChange(event) {
     event.preventDefault();
     //setUserInput(event.target.value)
     const key = event.target.id;
@@ -57,36 +58,35 @@ function App() {
     //  console.log(userInput);
   }
 
-  function handleSubmit(event) {
+  function handleFormSubmit(event) {
     event.preventDefault();
     let arr = [];
     for (const key in userInput) {
-      if (userInput[key] === "") {
-        arr.push(key);
-      }
+      arr.push(userInput[key]);
     }
-
-    setNewArray([...arr]);
-    //  console.log(newArray);
-    // if (arr.length === 0) {
-    //   setValidForm(true);
+    setNewArray(arr);
   }
-  //   const newStory = (event) => {
-  //     apiCall();
+  //console.log(newArray);
+
   //   };
-  const story = storyData.map((stuff) => {
-    //    console.log(stuff);
-  });
+  // const story = storyData.map((stuff) => {
+  //   //console.log(stuff);
+  // });
 
   return (
     <div>
       <Nav />
       {blankForm}
-      <input type="Submit" />
+      <input type="submit" value="Submit" onClick={handleFormSubmit} />
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/story" element={<Story title={title} />} />
+          <Route
+            path="/story"
+            element={
+              <Story title={title} inputArr={newArray} story={storyData} />
+            }
+          />
         </Routes>
       </main>
     </div>
