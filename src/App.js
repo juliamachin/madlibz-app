@@ -22,7 +22,9 @@ function App() {
 
   const apiCall = async () => {
     try {
-      let response = await axios.get(`http://madlibz.herokuapp.com/api/random`);
+      let response = await axios.get(
+        `https://madlibz.herokuapp.com/api/random`
+      );
       //   console.log(response.data);
       setFormData(response.data.blanks);
       setStoryData(response.data.value);
