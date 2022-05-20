@@ -2,11 +2,12 @@ import "./App.css";
 import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import Form from "./Components/Form/Form";
 import Story from "./Components/Story/Story";
 import Home from "./Components/Home/Home";
 import Nav from "./Components/Nav/Nav";
+import Footer from "./Components/Footer/Footer";
 
 function App() {
   const [formData, setFormData] = useState([]);
@@ -58,6 +59,8 @@ function App() {
     //  console.log(userInput);
   }
 
+  const navigate = useNavigate();
+
   function handleFormSubmit(event) {
     event.preventDefault();
     let arr = [];
@@ -65,6 +68,7 @@ function App() {
       arr.push(userInput[key]);
     }
     setNewArray(arr);
+    navigate("/story");
   }
   //console.log(newArray);
 
@@ -74,10 +78,18 @@ function App() {
   // });
 
   return (
-    <div>
+    <div className="body">
       <Nav />
-      {blankForm}
-      <input type="submit" value="Submit" onClick={handleFormSubmit} />
+      <div>
+        <form>{blankForm}</form>
+        <input
+          className="button"
+          type="submit"
+          value="Submit"
+          onClick={handleFormSubmit}
+        />
+      </div>
+      <Footer />
       <main>
         <Routes>
           <Route path="/" element={<Home />} />

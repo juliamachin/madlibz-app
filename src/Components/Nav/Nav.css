@@ -1,10 +1,7 @@
 nav {
-    background-color: #202834;
-    padding: 0;
-    margin: 0;
-}
-
-div {
-    padding: 0;
-    margin: 0;
+  background-color: #202834;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
 }

@@ -13,7 +13,6 @@ const Nav = () => {
             alt="MadLibs Icon"
           />
         </Link>
-        <Link to="/story">Story</Link>
       </nav>
     </div>
   );
