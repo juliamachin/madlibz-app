@@ -14,7 +14,7 @@ function Story(props) {
   });
 
   return (
-    <div>
+    <div className="story">
       <h2>{props.title}</h2>
       <p>{story}</p>
     </div>
