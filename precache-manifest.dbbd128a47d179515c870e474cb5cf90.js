@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "cbfd166a7fd61966cc51",
+    "revision": "7d35a2e30deffb578128",
     "url": "/madlibz-app/static/css/main.0865e3e5.chunk.css"
   },
   {
-    "revision": "cbfd166a7fd61966cc51",
-    "url": "/madlibz-app/static/js/main.0607c25a.chunk.js"
+    "revision": "7d35a2e30deffb578128",
+    "url": "/madlibz-app/static/js/main.a3d7a9bb.chunk.js"
   },
   {
     "revision": "26eee479406174f7aa43",
@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/madlibz-app/static/js/2.f88e17e1.chunk.js"
   },
   {
-    "revision": "a491003aca2f41328523082fe68935b1",
+    "revision": "3482d62f95c0a918564bf6830b4a881b",
     "url": "/madlibz-app/index.html"
   }
 ];
