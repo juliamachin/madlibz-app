@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "52b7c887c5230a5000b1",
+    "revision": "cbfd166a7fd61966cc51",
     "url": "/juliamachin/madlibz-app.git/static/css/main.0865e3e5.chunk.css"
   },
   {
-    "revision": "52b7c887c5230a5000b1",
-    "url": "/juliamachin/madlibz-app.git/static/js/main.044bfe1c.chunk.js"
+    "revision": "cbfd166a7fd61966cc51",
+    "url": "/juliamachin/madlibz-app.git/static/js/main.0607c25a.chunk.js"
   },
   {
     "revision": "7dbab17f0542d1e18965",
@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/juliamachin/madlibz-app.git/static/js/2.f88e17e1.chunk.js"
   },
   {
-    "revision": "fd41537357e0b95107d0bdef1e543ac4",
+    "revision": "1946b3d77233919a930c12ca4326df96",
     "url": "/juliamachin/madlibz-app.git/index.html"
   }
 ];
