@@ -4,20 +4,19 @@ import "./Story.css";
 function Story(props) {
   //console.log(props.story);
   const story = props.story.map((stuff, index) => {
-    //console.log(props.inputArr);
-    return (
-      <div>
-        <p>
+    if (stuff !== 0) {
+      return (
+        <React.Fragment>
           {stuff} {props.inputArr[index]}
-        </p>
-      </div>
-    );
+        </React.Fragment>
+      );
+    }
   });
 
   return (
     <div>
       <h2>{props.title}</h2>
-      {story}
+      <p>{story}</p>
     </div>
   );
 }
