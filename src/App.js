@@ -92,7 +92,7 @@ function App() {
       <Footer />
       <main>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route exact path="/" element={<Home />} />
           <Route
             path="/story"
             element={

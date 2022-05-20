@@ -1,7 +1,8 @@
 form {
-  margin: 40px 150px;
+  margin: auto;
   background-color: rgb(111, 178, 198, 0.8);
 }
-button {
-  float: right;
+
+.button {
+  position: sticky;
 }
