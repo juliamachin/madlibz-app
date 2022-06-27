@@ -22,12 +22,3 @@ For this project I will be creating a react application where the user will be a
 ## MVP
 
 ![Project 2 MVP](img/Project_2_MVP.jpg)
-
-## Things I got stuck on besides everything....
-
-- Trying to settle on a good API for my project ideas gave me commitment issues
-- Getting hung up on planned components and continuously moving things around
-- Kept having to revisit my data tree to debug
-- Implementing conditionals
-- Spiraling into more and more confusion before asking for help/being issue ticket shy
-- Difficulty making descriptive commits. Not having clear direction.
